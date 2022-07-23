@@ -41,12 +41,11 @@ if ($_GET['id']) {
         
     </head>
     <body class="body_style">
-    <?php require_once '../components/navbar.php' ?>
 
-    <!-- <nav class="navbar navbar-expand-lg navbar-light lit" style="padding-inline:4rem;">
+    <nav class="navbar navbar-expand-lg navbar-light" style="padding-inline:4rem;">
       <div class="container-fluid">
-          <a class="navbar-brand" href="../home.php">
-            <img src="https://i0.wp.com/ebsalter.com/wp-content/uploads/revslider/slide-3/lion.png?ssl=1" alt="" width="40" height="40" class="d-inline-block align-text-top">
+          <a class="navbar-brand" href="home.php">
+            <img src="../pictures/logo9-removebg-preview.png" alt="" width="120" height="110" class="d-inline-block align-text-top">
           
           </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,21 +54,33 @@ if ($_GET['id']) {
         <div class=" collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="../home.php">Home</a>
+              <a class="nav-link" aria-current="page" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="create.php">hf</a>
+              <a class="nav-link" href="../home.php">Animals</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../senior.php">Senior</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../junior.php">Junior</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../large.php">Large</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../small.php">Small</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="../logout.php?logout">Sign Out</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../login.php">Login</a>
+              <a class="nav-link" href="../index.php">Login</a>
             </li>
           </ul>
         </div>
       </div>
-    </nav> -->
+  </nav>
     
         <div class="container dit">
             <div class="row text-center justify-content-center">
@@ -137,7 +148,7 @@ if ($_GET['id']) {
                         <input type= "hidden" name= "id" value= "<?php echo $data['animal_id'] ?>" /> <!-- ovo je iz sql-->
                         <input type= "hidden" name= "picture" value= "<?php echo $data['picture'] ?>" />
                         <td><button class="btn btn-success" type= "submit">Save Changes</button></td>
-                        <td><a href= "admin_home.php"><button class="btn btn-warning" type="button">Back</button></a></td>
+                        <td><a href= "admin_index.php"><button class="btn btn-warning" type="button">Back</button></a></td>
                     </tr>
                 </table>
             </form>

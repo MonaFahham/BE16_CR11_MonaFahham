@@ -13,7 +13,7 @@ $tbody = '';
 if (mysqli_num_rows($result)  > 0) {
     while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
         $tbody .= "<tr>
-            <td><img class='img-thumbnail' src='../pictures/".$row['picture']."'</td>
+            <td><img class='img-thumbnail anim_size' src='../pictures/".$row['picture']."'</td>
             <td>" .$row['animal_name']."</td>
             <td>" .$row['picture']."</td>
             <td>" .$row['address']."</td>
@@ -48,11 +48,6 @@ mysqli_close($connect);
             margin: auto;
         }
 
-        .img-thumbnail {
-            width: 70px !important;
-            height: 70px !important;
-        }
-
         td {
             text-align: left;
             vertical-align: middle;
@@ -65,11 +60,10 @@ mysqli_close($connect);
 </head>
 
 <body class="body_style">
-
-<nav class="navbar navbar-expand-lg navbar-light lit" style="padding-inline:4rem;">
+<nav class="navbar navbar-expand-lg navbar-light" style="padding-inline:4rem;">
       <div class="container-fluid">
           <a class="navbar-brand" href="home.php">
-            <img src="https://i0.wp.com/ebsalter.com/wp-content/uploads/revslider/slide-3/lion.png?ssl=1" alt="" width="40" height="40" class="d-inline-block align-text-top">
+            <img src="../pictures/logo9-removebg-preview.png" alt="" width="120" height="110" class="d-inline-block align-text-top">
           
           </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -78,13 +72,22 @@ mysqli_close($connect);
         <div class=" collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="../index.php">Home</a>
+              <a class="nav-link" aria-current="page" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../create.php">Animals</a>
+              <a class="nav-link" href="../home.php">Animals</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../senior.php.php">Senior</a>
+              <a class="nav-link" href="../senior.php">Senior</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../junior.php">Junior</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../large.php">Large</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../small.php">Small</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="../logout.php?logout">Sign Out</a>
@@ -97,22 +100,26 @@ mysqli_close($connect);
       </div>
   </nav>
 
-
-    <div class="manageProduct w-75 mt-3">
+    <div class="manageProduct w-80 mt-3">
         <div class='mb-3'>
-            <a href="create.php"><button class='btn btn-primary' type="button">Add Animal</button></a>
-            <a href="../dashboard.php"><button class='btn btn-success' type="button">Dashboard</button></a>
+            <a href="create.php"><button class='btn btn-warning' type="button">Add Animal</button></a>
+            <a href="../dashboard.php"><button class='btn btn-danger' type="button">Dashboard</button></a>
         </div>
       
         <table class='table table-striped'>
-            <thead class='table-success'>
-                <tr>
+            <thead class='table-danger'>
+                <tr class="title_animal">
                     <th>Picture</th>
                     <th>Name</th>
+                    <th>Photo</th>
+                    <th>Address</th>
+                    <th>Size</th>
+                    <th>Age</th>
                     <th>Breed</th>
-                    <th>From</th>
-                    <th>Availabile</th>
-                    <th>#</th>
+                    <th>Vaccinated</th>
+                    <th>Availability</th>
+                    <th>Description</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>

@@ -157,12 +157,18 @@ mysqli_close($connect);
 <body class="body_style">
 <?php require_once 'components/navbar.php' ?>
 
-    <div class="container">
+<div class="container ">
+            <div class="row justify-content-center text-center text-danger">
+                <div class="col-lg-6 col-md-12 mb-4 mt-lg-5 mb-md-0">
+                    <img src="pictures/signup.png" class="img-fluid" alt="Pet" />
 
-        <!-- We write (action="php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>) for the security -->
+                </div>
+
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0 mt-lg-3 mt-sm-3 p-4">
+                   <!-- We write (action="php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>) for the security -->
         <!-- We write (enctype="multipart/form-data") because we have a picture -->
-        <form class="w-75" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off" enctype="multipart/form-data">
-            <h2>Sign Up.</h2>
+        <form class="w-90" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off" enctype="multipart/form-data">
+            <h2 class="txt">Sign Up</h2>
             <hr />
             <?php
             if (isset($errMSG)) {
@@ -192,20 +198,23 @@ mysqli_close($connect);
             <input type="text" name="address" class="form-control" placeholder="Enter Your address" maxlength="60" value="<?php echo $address ?>" />
             <span class="text-danger"> <?php echo $addressError; ?> </span>
 
-            <div class="d-flex">
-                <input class='form-control w-50' type="date" name="date_of_birth" value="<?php echo $date_of_birth ?>" />
-                <span class="text-danger"> <?php echo $dateError; ?> </span>
+            <!-- <div class="d-flex"> -->
+            <input class='form-control' type="date" name="date_of_birth" value="<?php echo $date_of_birth ?>" />
+            <span class="text-danger"> <?php echo $dateError; ?> </span>
 
-                <input class='form-control w-50' type="file" name="picture">
-                <span class="text-danger"> <?php echo $picError; ?> </span>
-            </div>
+            <input class='form-control' type="file" name="picture">
+            <span class="text-danger"> <?php echo $picError; ?> </span>
+            <!-- </div> -->
             <input type="password" name="pass" class="form-control" placeholder="Enter Password" maxlength="15" />
             <span class="text-danger"> <?php echo $passError; ?> </span>
             <hr />
-            <button type="submit" class="btn btn-block btn-primary" name="btn-signup">Sign Up</button>
+            <button type="submit" class="btn btn-block btn-danger text-light" name="btn-signup">Sign Up</button>
             <hr />
-            <a href="index.php">Sign in Here...</a>
+            <a href="index.php" class="text-danger">Sign in Here...</a>
         </form>
-    </div>
-</body>
+                </div>
+            </div>
+        </div>
+
+        </body>
 </html>

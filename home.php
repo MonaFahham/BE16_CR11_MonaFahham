@@ -29,19 +29,20 @@ $tbody= '';
 if(mysqli_num_rows($result1)  > 0) {     
     while($row1 = mysqli_fetch_array($result1, MYSQLI_ASSOC)){ 
       $tbody .= "
-      <div class='container col-4 nsl justify-content-center'>
-        <div class='boox col-12 justify-content-center '>
-              <a class='eddt' href='details.php?animal_id=".$row1['animal_id']."'>
-                <img class='im-size' src='./pictures/" .$row1['picture']."'>
+      <div class='container col-lg-4 justify-content-center'>
+        <div class='col-12 justify-content-center '>
+              <a href='details.php?animal_id=".$row1['animal_id']."'>
+                <img class='image-size' src='./pictures/" .$row1['picture']."'>
               </a>
         </div>
-        <div class='text-center nsl2'>
-          <a class='eddt' href='details.php?animal_id=".$row1['animal_id']."'>
-            <h4>" .$row1['animal_name']."</h4>
-            <h4>" .$row1['breed']."</h4>
+        <div class='text-center'>
+          <a class='intro_animal' href='details.php?animal_id=".$row1['animal_id']."'>
+            <h4 class='text-uppercase text-danger'>" .$row1['animal_name']."</h4>
+            <h4 class='text-secondary'>" .$row1['breed']."</h4>
           </a>
         </div>
-      </div>"
+      </div>
+      "
       ;
    };
 } else {
@@ -69,37 +70,34 @@ mysqli_close($connect); //close the connection so it will be very hard for other
 <?php require_once 'components/navbar.php' ?>
     
   <div class="container">
-        <div class="hero">
-            <img class="userImage" src="pictures/<?php echo $row['picture']; ?>" alt="<?php echo $row['first_name']; ?>">
-            <p class="text-white">Hi <?php echo $row['first_name'] . " " .$row['last_name'] ; ?></p>
-            <p class="text-white"><?php echo $row['email'] ; ?></p>
+        <div class="hero d-flex">
+          <p class="text-white logged_user">Hi <?php echo $row['first_name'] . " " .$row['last_name'] ; ?></p>
+          <img class="userImage" src="pictures/<?php echo $row['picture']; ?>" alt="<?php echo $row['first_name']; ?>">
+          <p class="text-danger logged_user"><?php echo $row['email'] ; ?></p>
         </div>
-        <a href="logout.php?logout">Log Out</a>
-        <div>
-
-        </div>
-    </div>
+        <p><a class="text-danger" href="logout.php?logout">Log Out</a></p>
+  </div>
 
 
-  <div class="caption text-center align-items-center">
-    <h1 class="wwkin text-center">Adopt A Pet</h1>
+  <div class=" container caption text-center align-items-center">
+    <h1 class="text-center txt">Adopt A Pet</h1>
 
   </div>
 
   <div id="items">
 
-    <div class="row text-center dit justify-content-center">
+    <div class="row text-center justify-content-center">
       <div class="col-12">
-        <h3 class="heading text-center">Animals</h3>
+        <h3 class="heading text-center text-danger py-4">Animals</h3>
       </div>
   
-      <a class='eddt col-3 sizes align-items-center' href='large.php'> <h3 class=" text-center">Large</h3> </a>
+      <!-- <a class='col-3 sizes align-items-center' href='large.php'> <h3 class=" text-center">Large</h3> </a>
        
-      <a class='eddt col-3 sizes align-items-center' href='small.php'> <h3 class=" text-center">Small</h3> </a>
+      <a class='col-3 sizes align-items-center' href='small.php'> <h3 class=" text-center">Small</h3> </a>
     
-      <a class='eddt col-3 sizes align-items-center' href='senior.php'> <h3 class=" text-center">Senior</h3> </a>
+      <a class='col-3 sizes align-items-center' href='senior.php'> <h3 class=" text-center">Senior</h3> </a>
       
-      <a class='eddt col-3 sizes align-items-center' href='junior.php'> <h3 class=" text-center">Junior</h3> </a>
+      <a class='col-3 sizes align-items-center' href='junior.php'> <h3 class=" text-center">Junior</h3> </a> -->
 
       <div class="col-12 row">
          <?php echo $tbody; ?>

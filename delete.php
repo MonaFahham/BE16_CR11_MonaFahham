@@ -58,12 +58,12 @@ if ($_GET['id']) {
                 </div>
                 <h4 class="text-danger"><?php echo $fname?></h4>
                 <h6>Do you really want to delete this user?</h6>
-                <div class="col-12">
+                <div class="col-12 pb-5">
                     <form action ="./a_delete.php" method="post">
                         <input type="hidden" name="id" value="<?php echo $id ?>" />
                         <input type="hidden" name="picture" value="<?php echo $photo ?>" />
-                        <button class="button button2" type="submit">Yes, delete it!</button>
-                        <a href="home.php"><button class="button" type="button">No, go back!</button></a>
+                        <button class="btn btn-danger" type="submit">Yes, delete it!</button>
+                        <a href="home.php"><button class="btn btn-secondary" type="button">No, go back!</button></a>
                     </form>
                 </div>
             </div>

@@ -12,50 +12,48 @@ $tbody="";
 if(mysqli_num_rows($result)>0){
     while($row = mysqli_fetch_assoc($result)){
         $tbody .= "
-        
         <div class='row text-center justify-content-center'>
-            <div class='nsl'></div>
-            <div class='col-12 nsl'>
-                <h1 class='dit'>
-                
-                  ".$row['animal_name']."
-                </h1>
-                <div class='dimgbox'>
-                    <img class='ditimg' src='./pictures/".$row['picture']."'>
-      
-                </div>
-            </div>
-            <div class='col-4 nsl'>
-                <p class='dit'>
+        <div class='card mb-3'>
+        <h1 class='text-danger'>
+         ".$row['animal_name']."
+        </h1>
+        <img src='./pictures/".$row['picture']."' class='card-img-top' alt='...'>
+            <div class='card-body'>
+              <h5 class='card-title'>
+                <p class=' text-decoration-none'>  
+                    Breed: ".$row['breed']." </a>
+                 </p>
+              </h5>
+              <p class='card-text'>
+                   Age: ".$row['age']."
+              </p>
+              <p>  
+                <a class=' text-decoration-none text-dark' href='".$row['size'].".php'>
+                    Animal Size: ".$row['size']." </a>
+              </p>
+              <p> 
+                   Availability: ".$row['status']."
+              </p>
+              <div class='col-12'>
+                <p>
                 
                      ".$row['description']."
                 </p>
             </div>  
-            <div class='col-4 nsl'>
-                <p class='dit'>  <a class='eddt' href='".$row['size'].".php'>
-                    Animal Size: ".$row['size']."
-                </p>
-                <p class='dit'>  <a class='eddt' href='breed.php?breed=".$row['breed']."'>
-                    Breed: ".$row['breed']." </a>
-                </p>
-                
-                <p class='dit'> 
-                   Availabile: ".$row['status']."
-                </p>
-                
-                <p class='dit'> 
-                   Age: ".$row['age']."
-                </p>
+              <p class='card-text'><small class='text-muted'>Last updated 3 hours ago</small></p>
             </div>
-            
-            
-        </div>";
+        </div>
+        </div>
+
+
+
+        ";
 
         if(isset($_SESSION["user"])){
             $tbody .= " 
             <div class='row text-center justify-content-center'>
                 <div class='col-12'>
-                    <a href='take.php?id=".$row['animal_id']."'><button class='button' type='button'>Take Me</button></a>
+                    <a href='take.php?id=".$row['animal_id']."'><button class='btn btn-success mb-4' type='button'>Take Me</button></a>
                 </div>
             </div>
             ";

@@ -15,7 +15,7 @@ if (isset($_SESSION['adm']) != "") {
 $error = false;
 $email = $password = $emailError = $passError = '';
 
-if (isset($_POST['btn-login'])) { //if you click on the button login
+if (isset($_POST['btn-login'])) { //if you click on the button signin
 
     $email = trim($_POST['email']);
     $email = strip_tags($email);
@@ -38,7 +38,7 @@ if (isset($_POST['btn-login'])) { //if you click on the button login
         $passError = "Please enter your password.";
     }
 
-    // if there's no error, continue to login
+    // if there's no error, continue to sign in
     if (!$error) {
         $password = hash('sha256', $pass); // password hashing
 
@@ -76,7 +76,7 @@ mysqli_close($connect);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Login</title>
+    <title>Sign In</title>
     <?php require_once 'components/boot.php' ?>
 </head>
 
@@ -84,9 +84,9 @@ mysqli_close($connect);
   <?php require_once 'components/navbar.php' ?>
 
     <div class="container justify-content-center">
-        <div class="row justify-content-center text-center">
+        <div class="row justify-content-center text-center text-danger">
             <form class="col-6 form_top" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
-                <h2>Login</h2>
+                <h2 class="txt">Sign In</h2>
                 <!-- <p>adm: wall@mail.com   usr: some@mail.com  pass: 123456</p> -->
                 <?php
                 if (isset($errMSG)) {
@@ -102,12 +102,14 @@ mysqli_close($connect);
                 <span class="text-danger"><?php echo $passError; ?></span>
                 <div class="nsl"></div>
                 
-                <button class="btn btn-block btn-primary" type="submit" name="btn-login">Sign In</button>
+                <button class="btn btn-block btn-danger text-light mt-4" type="submit" name="btn-login">Sign In</button>
                 
-                <a class="btn btn-block btn-secondary" href="register.php">Not registered yet? Click here</a>
+                <a class="btn btn-block btn-secondary mt-4" href="register.php">New User? Sign Up</a>
             </form>
 
         </div>
     </div>
+
+
 </body>
 </html>

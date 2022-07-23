@@ -22,19 +22,17 @@ if(mysqli_num_rows($result)>0){
         $tbody .= " 
         
         <div class='row text-center justify-content-center'>
-            <div class='nsl'></div>
-            <div class='col-12 nsl'>
-                <h1 class='dit'>
-                
+            <div class='col-12'>
+                <h1 class='text-center text-secondary'>
                   ".$row['animal_name']."
                 </h1>
-                <div class='dimgbox'>
-                    <img class='ditimg' src='./pictures/".$row['picture']."'>
+                <div>
+                    <img class='congrat_photo' src='./pictures/".$row['picture']."'>
       
                 </div>
             </div>
-            <div class='col-12 nsl'>
-              <h1>Breed: ".$row['breed']." </a>
+            <div >
+              <h1 class='congrat_breed'>Breed: ".$row['breed']." </a>
               </h1>
             </div>  
         </div>";
@@ -70,7 +68,7 @@ mysqli_close($connect);
 
     <div class="row text-center dit justify-content-center">
       <div class="col-12">
-        <h3 class="heading text-center">Congratulations</h3>
+        <h3 class="heading text-center text-danger">Congratulations</h3>
       </div>
       
       <div class="col-12 row">

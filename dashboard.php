@@ -27,7 +27,7 @@ if ($result->num_rows > 0) {
             <td>" . $row['first_name'] . " " . $row['last_name'] . "</td>
             <td>" . $row['date_of_birth'] . "</td>
             <td>" . $row['email'] . "</td>
-            <td><a href='update.php?id=" . $row['user_id'] . "'><button class='btn btn-primary btn-sm' type='button'>Edit</button></a>
+            <td><a href='update.php?id=" . $row['user_id'] . "'><button class='btn btn-warning btn-sm' type='button'>Edit</button></a>
             <a href='delete.php?id=" . $row['user_id'] . "'><button class='btn btn-danger btn-sm' type='button'>Delete</button></a></td>
          </tr>";
     }
@@ -70,51 +70,21 @@ mysqli_close($connect);
 </head>
 
 <body class="body_style">
-<nav class="navbar navbar-expand-lg navbar-light lit" style="padding-inline:4rem;">
-      <div class="container-fluid">
-          <a class="navbar-brand" href="home.php">
-            <img src="https://i0.wp.com/ebsalter.com/wp-content/uploads/revslider/slide-3/lion.png?ssl=1" alt="" width="40" height="40" class="d-inline-block align-text-top">
-          
-          </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class=" collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="index.php">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="animals/admin_index.php">Animals</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index.php">Senior</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="logout.php?logout">Sign Out</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="index.php">Login</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-  </nav>
+  <?php require_once 'components/navbar.php' ?>
+
     <div class="container">
         <div class="row">
-            <div class="col-2">
-                <img class="userImage" src="pictures/admavatar.png" alt="Adm avatar">
-                <p class="">Administrator</p>
-                <div>
-                    <a class="btn btn-success" href="animals/admin_index.php">Animals</a>
-                    <a class="btn btn-danger" href="dashboard.php">Users</a>
-                </div>
-                <a href="logout.php?logout">Log Out</a>
+            <div class="col-3">
+                <img class="userImage mt-5 mb-3" src="pictures/admin.png" alt="Adm avatar">
+                <p class="text-center mb-5 text-dark">Administrator</p>
+                <a class="btn btn-warning" href="animals/admin_index.php">Animals</a>
+                <a class="btn btn-danger" href="dashboard.php">Users</a>
+                <p> <a href="logout.php?logout" class="text-danger text-right my-4">Log Out</a></p>
             </div>
-            <div class="col-8 mt-2">
-                <p class='h2'>Users</p>
+            <div class="col-9 mt-2">
+            <h2 class="txt text-center">Sign Up</h2>
                 <table class='table table-striped'>
-                    <thead class='table-success'>
+                    <thead class='table-danger'>
                         <tr>
                             <th>Picture</th>
                             <th>Name</th>

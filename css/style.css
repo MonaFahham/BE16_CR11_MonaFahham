@@ -1,5 +1,6 @@
 * {
     max-width: 100%;
+    /* color: #ab0914; */
 }
 
 .body_style {
@@ -11,13 +12,18 @@
 }
 
 .userImage {
-    width: 200px;
+    border-radius: 50%;
     height: 200px;
+    width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero {
-    background: rgb(2, 0, 36);
-    background: linear-gradient( 24deg, rgba(2, 0, 36, 1) 0%, rgba(0, 212, 255, 1) 100%);
+    background: #ab0914;
+    background: linear-gradient(24deg, #ab0914 0%, rgb(249, 236, 236) 100%);
+    /* border-radius: 15%; */
 }
 
 .userImageDashboard {
@@ -37,4 +43,41 @@ td {
 
 tr {
     text-align: center;
+}
+
+.txt {
+    color: #ab0914;
+}
+
+.logged_user {
+    height: 10em;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image-size {
+    object-fit: cover;
+    /* height: 50px; */
+}
+
+.intro_animal {
+    text-decoration: none;
+}
+
+.intro_animal_adopt {
+    text-decoration: none;
+}
+
+.congrat_photo {
+    width: 30vw;
+}
+
+.congrat_breed {
+    font-size: 2vw;
+}
+
+.anim_size {
+    width: 10rem;
 }

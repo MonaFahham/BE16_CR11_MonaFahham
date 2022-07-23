@@ -12,16 +12,16 @@ if(mysqli_num_rows($result)>0){
     while($row = mysqli_fetch_assoc($result)){
         
         $tbody .= "
-        <div class='container col-4 nsl justify-content-center'>
-          <div class='boox col-12 justify-content-center '>
-                <a class='eddt' href='details.php?animal_id=".$row['animal_id']."'>
+        <div class='container col-4 justify-content-center'>
+          <div col-12 justify-content-center '>
+                <a href='details.php?animal_id=".$row['animal_id']."'>
                   <img class='im-size' src='./pictures/" .$row['picture']."'>
                 </a>
           </div>
-          <div class='text-center nsl2'>
-            <a class='eddt' href='details.php?animal_id=".$row['animal_id']."'>
-              <h4>" .$row['animal_name']."</h4>
-              <h4>" .$row['breed']."</h4>
+          <div class='text-center '>
+            <a class='intro_animal' href='details.php?animal_id=".$row['animal_id']."'>
+              <h4 class='text-uppercase text-danger'>" .$row['animal_name']."</h4>
+              <h4 class='text-secondary'>" .$row['breed']."</h4>
             </a>
           </div>
         </div> ";
@@ -56,7 +56,7 @@ if(mysqli_num_rows($result)>0){
     
       <div class="row text-center dit justify-content-center">
         <div class="col-12">
-          <h3 class="heading text-center">Large Animals</h3>
+          <h3 class="heading text-center text-danger py-4">Large Animals</h3>
         </div>
         
         <div class="col-12 row">
